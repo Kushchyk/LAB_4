@@ -71,9 +71,13 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
+
 /* USER CODE BEGIN PFP */
 void UpdateLEDs();
 void ClearLEDs();
+void LSM9DS1_Init();
+void LSM9DS1_ReadData(int16_t*, int16_t*, int16_t*);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -124,10 +128,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   LSM9DS1_Init();
 
-
-      while (1) {
+  while (1) {
           // Зчитування даних
-          LSM9DS1_ReadData(acc, gyro, mag);
+ LSM9DS1_ReadData(acc, gyro, mag);
 
           // Вивід у форматі UART
 

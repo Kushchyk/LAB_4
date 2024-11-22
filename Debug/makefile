@@ -60,8 +60,8 @@ all: main-build
 main-build: LAB_4_Kushchyk_Patrun_Bukaliuk.elf secondary-outputs
 
 # Tool invocations
-LAB_4_Kushchyk_Patrun_Bukaliuk.elf LAB_4_Kushchyk_Patrun_Bukaliuk.map: $(OBJS) $(USER_OBJS) D:\STMicroelectronics\LAB_4_Kushchyk_Patrun_Bukaliuk\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LAB_4_Kushchyk_Patrun_Bukaliuk.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\STMicroelectronics\LAB_4_Kushchyk_Patrun_Bukaliuk\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB_4_Kushchyk_Patrun_Bukaliuk.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LAB_4_Kushchyk_Patrun_Bukaliuk.elf LAB_4_Kushchyk_Patrun_Bukaliuk.map: $(OBJS) $(USER_OBJS) /Users/andrii/Desktop/LAB_4_Kushchyk_Patrun_Bukaliuk/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LAB_4_Kushchyk_Patrun_Bukaliuk.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/andrii/Desktop/LAB_4_Kushchyk_Patrun_Bukaliuk/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB_4_Kushchyk_Patrun_Bukaliuk.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
